@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>EstateMaps · 3D sales platform for property developers</title>
+    <meta name="description" content="EstateMaps turns your layout plan into an interactive 3D estate. Buyers explore every stand, try house designs and see prices and payment plans on their phone." />
+    <meta property="og:title" content="EstateMaps · See the estate before it's built" />
+    <meta property="og:description" content="Interactive 3D estate maps for property developers. By Global Alfabet." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0E2233" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Lets Netlify Forms detect the contact form at build time -->
+    <form name="contact" data-netlify="true" netlify-honeypot="company-website" hidden>
+      <input name="name" /><input name="company" /><input name="email" /><input name="phone" /><textarea name="message"></textarea><input name="company-website" />
+    </form>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

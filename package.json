@@ -1,0 +1,14 @@
+{
+  "name": "estatemaps",
+  "private": true,
+  "description": "EstateMaps by Global Alfabet: website and 3D sales platform for property developers",
+  "scripts": {
+    "setup": "npm --prefix apps/web ci",
+    "dev": "npm --prefix apps/web run dev",
+    "lint": "npm --prefix apps/web run lint",
+    "build": "npm --prefix apps/web run build",
+    "check": "npm run lint && npm run build",
+    "up": "docker compose up -d --build",
+    "down": "docker compose down"
+  }
+}
