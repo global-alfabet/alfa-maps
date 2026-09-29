@@ -4,21 +4,21 @@ import demo from "../data/demo-estate.json";
 // Callouts that look like tooltips pinned to the 3D scene. [from, to] is the scroll window they show in.
 const CALLOUTS = [
   { id: "plan", anchor: "plan", from: 0.0, to: 0.13, title: "Starts with your layout plan", body: "The surveyor's general plan you already have." },
-  { id: "trace", anchor: "trace", from: 0.02, to: 0.13, title: "Every stand traced", body: "Outlines, sizes and numbers read straight from the plan." },
-  { id: "sizes", anchor: "sizes", from: 0.24, to: 0.4, title: "True to scale", body: "Real stand sizes, frontages and boundaries." },
+  { id: "trace", anchor: "trace", from: 0.02, to: 0.13, title: "Every plot traced", body: "Outlines, sizes and numbers read straight from the plan." },
+  { id: "sizes", anchor: "sizes", from: 0.24, to: 0.4, title: "True to scale", body: "Real plot sizes, frontages and boundaries." },
   { id: "roads", anchor: "roads", from: 0.26, to: 0.4, title: "Roads, parks & open space", body: "The whole layout, not just one plot." },
-  { id: "homes", anchor: "homes", from: 0.5, to: 0.7, title: "Homes on every stand", body: "Single, double and triple storey, so buyers see the finished estate." },
-  { id: "forsale", anchor: "forsale", from: 0.53, to: 0.7, title: "Available stands marked", body: "Sold and reserved stands update from your admin panel." },
+  { id: "homes", anchor: "homes", from: 0.5, to: 0.7, title: "Homes on every plot", body: "Single, double and triple storey, so buyers see the finished estate." },
+  { id: "forsale", anchor: "forsale", from: 0.53, to: 0.7, title: "Available plots marked", body: "Sold and reserved plots update from your admin panel." },
   { id: "house", anchor: "house", from: 0.8, to: 1.2, title: "Design the house", body: "Swap house types, storeys, garages, pools and colours." },
-  { id: "price", anchor: "price", from: 0.84, to: 1.2, title: "Price & payment plans", body: "Cash, instalments and mortgage, worked out per stand." },
-  { id: "pool", anchor: "pool", from: 0.88, to: 1.2, title: "Street, aerial & garden views", body: "Plus a site plan and a PDF stand pack." },
+  { id: "price", anchor: "price", from: 0.84, to: 1.2, title: "Price & payment plans", body: "Cash, instalments and mortgage, worked out per plot." },
+  { id: "pool", anchor: "pool", from: 0.88, to: 1.2, title: "Street, aerial & garden views", body: "Plus a site plan and a PDF plot pack." },
 ];
 
 const STEPS = [
-  { n: "01", from: 0, title: "Your plan", body: "Send us the surveyor's layout plan and your stand list." },
-  { n: "02", from: 0.2, title: "Your estate, in 3D", body: "Every stand, road and park, built to scale." },
+  { n: "01", from: 0, title: "Your plan", body: "Send us the surveyor's layout plan and your plot list." },
+  { n: "02", from: 0.2, title: "Your estate, in 3D", body: "Every plot, road and park, built to scale." },
   { n: "03", from: 0.44, title: "Built out", body: "Homes, walls and gardens appear, so buyers can picture the finished estate." },
-  { n: "04", from: 0.74, title: "Their future home", body: "Buyers pick a stand, design the house and see the price, on their phone." },
+  { n: "04", from: 0.74, title: "Their future home", body: "Buyers pick a plot, design the house and see the price, on their phone." },
 ];
 
 const fadeIn = (p, a, b) => Math.max(0, Math.min(1, Math.min((p - a) / 0.04, (b - p) / 0.04)));

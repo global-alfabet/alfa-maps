@@ -26,4 +26,4 @@ A navy tile with an ink-blue roof line and an orange beacon dot (`apps/web/publi
 `src/components/Brand.jsx`). Wordmark: "Estate" in the text colour, "Maps" in beacon orange.
 
 ## Voice
-Plain and specific. Talk about stands, houses, cluster homes, buyers, the diaspora. Short sentences. No hype words.
+Plain and specific. Talk about plots, houses, townhouses, buyers, buyers living abroad. Say "plot", not "stand"; "townhouses", not "cluster homes"; "buyers living abroad", not "the diaspora". Short sentences. No hype words.

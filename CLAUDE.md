@@ -33,7 +33,7 @@ scripts/         setup.sh / setup.ps1 (first-time setup)
 - `npm run check` must pass (ESLint clean + Vite build) before any commit.
 - Keep the site fast: three.js is lazy-loaded by ScrollStory; do not import it from other components.
 - Brand tokens live at the top of `site.css` (see docs/BRAND.md). Use them; don't hard-code new colours.
-- Copy: plain, specific, short sentences. Say "stands", "houses", "cluster homes". No lorem ipsum.
+- Copy: plain, specific, short sentences. Say "plots", "houses", "townhouses" (not "stands" or "cluster homes"). No lorem ipsum.
 - Never commit secrets. Use `.env` files (git-ignored) and document variables in `.env.example`.
 - Commit messages: conventional style, e.g. `feat(web): add pricing FAQ`, `fix(engine): garage door offset`.
 - Work on a branch for anything big; `main` deploys the website to Netlify automatically.

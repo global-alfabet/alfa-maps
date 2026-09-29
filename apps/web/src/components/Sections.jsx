@@ -27,13 +27,13 @@ export function Intro() {
       <h2>Buyers don't buy technical drawings. They buy the life they can picture.</h2>
       <div className="intro-cols">
         <p>
-          Most developments are sold from a black-and-white layout plan and a spreadsheet of stand numbers. That works
+          Most developments are sold from a black-and-white layout plan and a spreadsheet of plot numbers. That works
           for surveyors. It doesn't help a family in Harare, or a buyer in London or Johannesburg who can't visit the
           site, imagine where their home will stand.
         </p>
         <p>
           EstateMaps turns the plan you already have into a 3D estate buyers can explore on their phone. They see every
-          stand to scale, try a house on the one they like, and understand the price and payments before they call your
+          plot to scale, try a house on the one they like, and understand the price and payments before they call your
           sales team.
         </p>
       </div>
@@ -42,9 +42,9 @@ export function Intro() {
 }
 
 const HOW = [
-  { t: "Send your plans", b: "Share the surveyor's layout plan (PDF from CAD) and your stand or unit list with sizes and prices." },
-  { t: "We build your estate", b: "Every stand is traced, measured and turned into a branded 3D site for your development, usually within a week." },
-  { t: "Share and sell", b: "Put the link on your website, WhatsApp and adverts. Your team marks stands sold or reserved in seconds." },
+  { t: "Send your plans", b: "Share the surveyor's layout plan (PDF from CAD) and your plot or unit list with sizes and prices." },
+  { t: "We build your estate", b: "Every plot is traced, measured and turned into a branded 3D site for your development, usually within a week." },
+  { t: "Share and sell", b: "Put the link on your website, WhatsApp and adverts. Your team marks plots sold or reserved in seconds." },
 ];
 export function HowItWorks() {
   return (
@@ -67,12 +67,12 @@ export function HowItWorks() {
 }
 
 const FEATURES = [
-  { i: I.map, t: "The whole estate in 3D", b: "Fly over every stand, road and park. Whole estate, estate map, street, aerial, garden and free-roam views." },
-  { i: I.house, t: "House designer", b: "Buyers swap between house types and change storeys, garage size, pool, roof and colours. The house always fits the stand." },
+  { i: I.map, t: "The whole estate in 3D", b: "Fly over every plot, road and park. Whole estate, estate map, street, aerial, garden and free-roam views." },
+  { i: I.house, t: "House designer", b: "Buyers swap between house types and change storeys, garage size, pool, roof and colours. The house always fits the plot." },
   { i: I.price, t: "Prices & payment plans", b: "Cash prices and monthly instalment or mortgage payments, worked out from your own rates and terms." },
-  { i: I.pdf, t: "Stand packs", b: "A branded PDF with views of the stand, the site plan with boundary lengths, and the payment options." },
-  { i: I.admin, t: "Your admin panel", b: "Mark stands sold or reserved, change prices, set the house shown on each stand and update your contact details." },
-  { i: I.phone, t: "Made for phones", b: "Runs in the browser, no app to install. Share a link to one stand straight into a WhatsApp chat." },
+  { i: I.pdf, t: "Plot packs", b: "A branded PDF with views of the plot, the site plan with boundary lengths, and the payment options." },
+  { i: I.admin, t: "Your admin panel", b: "Mark plots sold or reserved, change prices, set the house shown on each plot and update your contact details." },
+  { i: I.phone, t: "Made for phones", b: "Runs in the browser, no app to install. Share a link to one plot straight into a WhatsApp chat." },
 ];
 export function Features() {
   return (
@@ -102,7 +102,7 @@ export function Audiences() {
           <p className="eyebrow">For developers</p>
           <h2>Sell faster, with fewer site visits.</h2>
           <ul className="ticks">
-            <li>Reach diaspora buyers who can't walk the site</li>
+            <li>Reach buyers living abroad who can't walk the site</li>
             <li>Stand out from developments sold off a PDF</li>
             <li>Keep availability and prices up to date yourself</li>
             <li>Every new phase added from the same plans</li>
@@ -112,7 +112,7 @@ export function Audiences() {
           <p className="eyebrow">For buyers</p>
           <h2>Know exactly what you're buying.</h2>
           <ul className="ticks">
-            <li>See the stand's size, frontage and neighbours</li>
+            <li>See the plot's size, frontage and neighbours</li>
             <li>Picture your own home on it, then change it</li>
             <li>Understand the deposit and monthly payments</li>
             <li>Share it with family before you decide</li>
@@ -153,7 +153,7 @@ export function Integrate() {
 
 const PLANS = [
   { t: "Pilot", s: "Try it on one development", items: ["One development in 3D", "Your branding and contacts", "Admin panel for your team", "Launch support"] },
-  { t: "Development", s: "For each live development", items: ["Everything in Pilot", "Stand packs (PDF)", "Updates to stands and prices", "Link, button or embed"], featured: true },
+  { t: "Development", s: "For each live development", items: ["Everything in Pilot", "Plot packs (PDF)", "Updates to plots and prices", "Link, button or embed"], featured: true },
   { t: "Portfolio", s: "For developers with several estates", items: ["All your developments", "Your own web address", "Photo-style renders and fly-through video", "Priority support"] },
 ];
 export function Packages() {
@@ -185,11 +185,11 @@ export function Packages() {
 }
 
 const FAQ = [
-  ["What do you need from us?", "The surveyor's general or layout plan as a PDF exported from CAD, and a list of stands or units with sizes, prices and status. Your logo and brand colours if you'd like them used."],
+  ["What do you need from us?", "The surveyor's general or layout plan as a PDF exported from CAD, and a list of plots or units with sizes, prices and status. Your logo and brand colours if you'd like them used."],
   ["How long does it take?", "Most developments are ready within a week of receiving the plans. Changes to prices and availability are instant from your admin panel."],
   ["Do buyers need to install anything?", "No. It runs in the browser on phones, tablets and computers. You share a normal web link."],
   ["Are the houses real designs?", "They're concept homes to help buyers picture the finished estate. If you have your own house plans, we can add them as house types."],
-  ["Can it handle cluster homes and houses, not just stands?", "Yes. Stands, houses and cluster developments are our focus. Talk to us about apartment blocks."],
+  ["Can it handle townhouses and houses, not just plots?", "Yes. Plots, houses and townhouse developments are our focus. Talk to us about apartment blocks."],
   ["Who owns the data?", "Your plans, prices and buyer information stay yours. EstateMaps provides the software and hosting as a service."],
 ];
 export function Faq() {
@@ -270,7 +270,7 @@ export function Contact() {
           </label>
           <label className="wide">
             About your development
-            <textarea id="c-msg" name="message" rows="4" placeholder="Location, number of stands or units, stage of sales…" />
+            <textarea id="c-msg" name="message" rows="4" placeholder="Location, number of plots or units, stage of sales…" />
           </label>
           <button className="btn primary wide" disabled={state === "sending"}>
             {state === "sending" ? "Sending…" : "Request a demo"}
