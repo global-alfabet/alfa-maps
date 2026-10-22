@@ -1,5 +1,6 @@
 """
-Generates the fictional demo estate used on the website (apps/web/src/data/demo-estate.json).
+Generates the fictional demo estate used on the website (apps/web/src/data/demo-estate.json)
+and as the app's starting estate (apps/app/seed/estate.json).
 Curved residential streets, back-to-back stands, a cross street and a park. Not based on any real development.
 
   python tools/make_demo_estate.py
@@ -10,7 +11,9 @@ import random
 from pathlib import Path
 
 random.seed(7)
-OUT = Path(__file__).resolve().parent.parent / "apps" / "web" / "src" / "data" / "demo-estate.json"
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "apps" / "web" / "src" / "data" / "demo-estate.json"
+APP_SEED = ROOT / "apps" / "app" / "seed" / "estate.json"
 
 ROAD = 12.0            # street width (m)
 HW = ROAD / 2
@@ -104,6 +107,8 @@ for i, s in enumerate(stands):
         "edges": edges,
     })
 op = [{"poly": [[round(x - hc[0], 2), round(z - hc[1], 2)] for x, z in o["poly"]]} for o in opens]
-OUT.write_text(json.dumps({"hero": "101", "stands": out, "open": op}, separators=(",", ":")))
+text = json.dumps({"hero": "101", "stands": out, "open": op}, separators=(",", ":"))
+OUT.write_text(text)
+APP_SEED.write_text(text)
 sizes = [s["size"] for s in out]
-print(f"{len(out)} stands ({min(sizes)}–{max(sizes)} m²), {len(op)} park(s) → {OUT}")
+print(f"{len(out)} stands ({min(sizes)}–{max(sizes)} m²), {len(op)} park(s) → {OUT} and {APP_SEED}")

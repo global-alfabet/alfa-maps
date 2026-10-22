@@ -1,0 +1,19 @@
+{
+  "name": "@alfa-maps/engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Alfa Maps 3D engine: plots, parametric houses and estate scenes, shared by the website and the app",
+  "exports": {
+    "./util": "./src/util.js",
+    "./house": "./src/house.js",
+    "./materials": "./src/materials.js",
+    "./builder": "./src/builder.js",
+    "./defaults": "./src/defaults.js",
+    "./presets": "./src/presets.js",
+    "./estate": "./src/estate.js"
+  },
+  "peerDependencies": {
+    "three": "^0.169.0"
+  }
+}

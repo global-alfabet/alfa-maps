@@ -11,7 +11,7 @@ export const PRESETS = [
   { type: "baobab", name: "Baobab", tagline: "Classic double storey", storeys: 2, shape: "rect", roof: "hip", garage: 2, pool: false, pergola: true, veranda: false, balcony: true, solar: false, cottage: false, accent: "stone", size: "standard", wallColor: "#EFEBE3", roofColor: "#55595E", beds: 4 },
   { type: "marula", name: "Marula", tagline: "Contemporary double storey", storeys: 2, shape: "L", roof: "flat", garage: 3, pool: true, pergola: true, veranda: false, balcony: true, solar: true, cottage: false, accent: "timber", size: "large", wallColor: "#F2EFE9", roofColor: "#2E3136", beds: 4 },
   { type: "mahogany", name: "Mahogany", tagline: "Three-storey with roof terrace", storeys: 3, shape: "rect", roof: "flat", garage: 3, pool: true, pergola: false, veranda: false, balcony: true, solar: true, cottage: false, accent: "stone", size: "standard", wallColor: "#DCD6CC", roofColor: "#2E3136", beds: 5 },
-  { type: "empty", name: "Vacant stand", tagline: "Show the land only", empty: true },
+  { type: "empty", name: "Vacant land", tagline: "Show the land only", empty: true },
 ];
 
 export const presetByType = (t) => PRESETS.find((p) => p.type === t) || PRESETS[1];
@@ -25,7 +25,7 @@ export function specFromPreset(type, overrides = {}) {
 }
 
 export function describe(spec) {
-  if (spec.empty) return "Vacant stand.";
+  if (spec.empty) return "Vacant land.";
   const parts = [`${["", "Single", "Double", "Three"][spec.storeys]}-storey ${({ rect: "", L: "L-shaped ", U: "U-shaped ", T: "T-shaped " })[spec.shape]}home`];
   parts.push(spec.garage ? `${spec.garage}-car garage` : "no garage");
   parts.push(`${spec.roof} roof`);

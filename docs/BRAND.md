@@ -1,29 +1,36 @@
-# EstateMaps brand
+# Alfa Maps brand
 
-**Name:** EstateMaps (one word, capital E and M). Domain: estatemaps.app.
+**Name:** Alfa Maps (two words, capital A and M). Domain: maps.globalalfabet.com.
 **Line:** See the estate before it's built.
-**Parent:** EstateMaps is a Global Alfabet company.
+**Parent:** Alfa Maps is a Global Alfabet product, alongside Alfa Places, Alfa Shop and the Global Alfabet Account.
+
+## Design language
+Every Global Alfabet site shares one look, based on business.apple.com: clean white and #f5f5f7 sections, Inter,
+large confident headings, pill buttons, rounded 28px cards, translucent navigation. Each product changes only
+its accent colour. Alfa Maps is green, for land and gardens.
 
 ## Colours
-The palette comes from the subject: the surveyor's blueprint, the ink on the plan, the orange survey beacons that
-mark stand corners, and the green of finished gardens.
-
 | Token | Hex | Use |
 |---|---|---|
-| Blueprint navy `--navy` | `#0E2233` | Dark sections, logo tile, text on light |
-| Drawing ink `--ink` | `#8EC5E6` | Lines on the plan, accents on navy |
-| Beacon orange `--beacon` | `#E8742E` | Calls to action, highlights, the dot in the logo |
-| Estate green `--green` | `#2F6B4F` | "Available", section eyebrows, icons |
-| Paper `--paper` | `#F4F6F2` | Page background |
+| `--accent` | `#1FA45A` | Alfa Maps green: icon tiles, pins, ticks, progress, the featured plot in 3D |
+| `--accent-strong` | `#137A43` | Green text and buttons (white on it passes WCAG AA) |
+| `--accent-soft` | `#E4F4EA` | Hover and selected backgrounds |
+| `--window` | `#FFD60A` | The lit window in the logo; admin mode in the app |
+| `--ink` | `#1D1D1F` | Text; the dark "plan" at the start of the 3D hero |
+| `--ink-2` | `#6E6E73` | Secondary text |
+| `--soft` | `#F5F5F7` | Alternate section and card background |
+| `--line` | `#D2D2D7` | Hairlines and input borders |
 
 ## Type
-- Display: Bricolage Grotesque (variable) — headlines
-- Body: IBM Plex Sans
-- Labels and numbers: IBM Plex Mono (stand numbers, eyebrows, measurements)
+Inter (variable), self-hosted with `@fontsource-variable/inter`. Headlines 700 with tight tracking;
+body 17px on the website, 14px in the app. Numbers use tabular figures in the app.
 
 ## Logo
-A navy tile with an ink-blue roof line and an orange beacon dot (`apps/web/public/favicon.svg`,
-`src/components/Brand.jsx`). Wordmark: "Estate" in the text colour, "Maps" in beacon orange.
+From the brand kit at github.com/global-alfabet/brand (`logos/alfa-maps/`): a green squircle app icon with a white
+3D house on its plot. On the website and app the icon sits next to the name "Alfa Maps" set in Inter 600, so the
+name takes the text colour on light and dark backgrounds. The kit also has lockups (light, dark, white), the glyph
+on its own, avatars and banners. Don't redraw or recolour the logo here; regenerate it in the brand repo.
 
 ## Voice
-Plain and specific. Talk about plots, houses, townhouses, buyers, buyers living abroad. Say "plot", not "stand"; "townhouses", not "cluster homes"; "buyers living abroad", not "the diaspora". Short sentences. No hype words.
+Plain and specific. Talk about plots, houses, townhouses, buyers, buyers living abroad. Say "plot", not "stand";
+"townhouses", not "cluster homes"; "buyers living abroad", not "the diaspora". Short sentences. No hype words.

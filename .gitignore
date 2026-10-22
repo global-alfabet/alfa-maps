@@ -6,3 +6,9 @@ dist/
 .DS_Store
 *.log
 .netlify/
+
+# Client files never go in git: plans, stand sheets and estate data live outside the repo or in estates/
+estates/
+apps/app/data/
+*.pdf
+!docs/**/*.pdf

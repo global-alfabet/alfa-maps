@@ -1,0 +1,32 @@
+{
+  "estateName": "Hillcrest Gardens",
+  "location": "Demo estate",
+  "developer": "Example Developments",
+  "unit": "plot",
+  "tagline": "Serviced residential plots, ready to build",
+  "about": "This is a fictional demo estate. Explore every plot in 3D, try a house on the one you like, and see its price and payment plans.",
+  "features": [
+    "Serviced plots with roads, water and power",
+    "Cash, 36-month instalment and 60-month mortgage options",
+    "10% deposit to secure a plot",
+    "Plot sizes from about 500 m² to just under 1,000 m²"
+  ],
+  "contact": { "name": "Hillcrest Gardens sales", "phone": "", "whatsapp": "", "email": "" },
+  "brandColor": "#1FA45A",
+  "pricing": {
+    "tiers": [
+      { "min": 0, "cash": 60, "finance": 65 },
+      { "min": 650, "cash": 50, "finance": 55 },
+      { "min": 1000, "cash": 45, "finance": 55 }
+    ],
+    "deposit_pct": 10,
+    "agreement_fee": 500,
+    "admin_pct": 3,
+    "interest_pct": 12,
+    "terms": [
+      { "months": 36, "label": "Instalments (36 months)" },
+      { "months": 60, "label": "Mortgage (60 months)" }
+    ]
+  },
+  "look": { "treeDensity": 0.5, "streetTrees": true, "signs": true, "parkTrees": 0.6 }
+}

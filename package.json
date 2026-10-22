@@ -1,14 +1,35 @@
 {
-  "name": "estatemaps",
+  "name": "alfa-maps",
   "private": true,
-  "description": "EstateMaps by Global Alfabet: website and 3D sales platform for property developers",
+  "description": "Alfa Maps by Global Alfabet: website, 3D estate app and shared 3D engine",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "setup": "npm --prefix apps/web ci",
-    "dev": "npm --prefix apps/web run dev",
-    "lint": "npm --prefix apps/web run lint",
-    "build": "npm --prefix apps/web run build",
+    "setup": "npm ci",
+    "dev": "npm run dev -w @alfa-maps/web",
+    "dev:app": "npm run dev -w @alfa-maps/app",
+    "start:app": "npm start -w @alfa-maps/app",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "npm run build --workspaces --if-present",
     "check": "npm run lint && npm run build",
+    "format": "prettier --write \"apps/*/src/**/*.{js,jsx,css}\" \"apps/app/client/src/**/*.{js,jsx,css}\"",
     "up": "docker compose up -d --build",
     "down": "docker compose down"
-  }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "prettier": "^3.3.3"
+  },
+  "type": "module"
 }

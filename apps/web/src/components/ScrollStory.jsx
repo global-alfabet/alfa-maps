@@ -116,12 +116,12 @@ export default function ScrollStory() {
   const dark = p < 0.28;
 
   return (
-    <section className={`story${dark || failed ? " is-dark" : ""}`} ref={section} aria-label="How EstateMaps turns a plan into a 3D estate">
+    <section className={`story${dark || failed ? " is-dark" : ""}`} ref={section} aria-label="How Alfa Maps turns a plan into a 3D estate">
       <div className="story-stage">
         <div className="story-canvas" ref={stage} aria-hidden="true" />
 
         <div className="story-copy">
-          <p className="eyebrow">EstateMaps · 3D sales platform for property developers</p>
+          <p className="eyebrow">Alfa Maps · 3D sales platform for property developers</p>
           <h1 className={p > 0.06 ? "is-small" : ""}>
             See the estate
             <br />

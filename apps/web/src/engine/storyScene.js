@@ -1,17 +1,18 @@
 // Scroll-driven hero scene: surveyor's drawing → 3D estate → a finished home.
 // progress 0..1 is supplied by the page as the visitor scrolls.
 import * as THREE from "three";
-import { Builder } from "./builder.js";
-import { buildStand } from "./house.js";
-import { materials } from "./materials.js";
-import { bbox, centroid, convexHull, grow, rnd } from "./util.js";
-import { fillHouses } from "./defaults.js";
-import { specFromPreset } from "../data/presets.js";
+import { Builder } from "@alfa-maps/engine/builder";
+import { buildStand } from "@alfa-maps/engine/house";
+import { materials } from "@alfa-maps/engine/materials";
+import { bbox, centroid, convexHull, grow, rnd } from "@alfa-maps/engine/util";
+import { fillHouses } from "@alfa-maps/engine/defaults";
+import { specFromPreset } from "@alfa-maps/engine/presets";
 
-const NAVY = new THREE.Color("#0E2233");
-const SKY = new THREE.Color("#CFE2EE");
-const INK = 0x8ec5e6;
-const BEACON = 0xe8742e;
+// Brand: graphite night plan → daylight estate; drawing lines in light grey; Alfa Maps green for the featured plot.
+const GRAPHITE = new THREE.Color("#1D1D1F");
+const SKY = new THREE.Color("#DCE7EE");
+const INK = 0xc7c7cc;
+const BEACON = 0x1fa45a;
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const ramp = (p, a, b) => clamp01((p - a) / (b - a));
@@ -33,8 +34,8 @@ export class StoryScene {
     container.appendChild(r.domElement);
 
     const s = (this.scene = new THREE.Scene());
-    s.background = NAVY.clone();
-    s.fog = new THREE.Fog(NAVY.clone(), 420, 1400);
+    s.background = GRAPHITE.clone();
+    s.fog = new THREE.Fog(GRAPHITE.clone(), 420, 1400);
     this.hemi = new THREE.HemisphereLight(0xdbeeff, 0x6f6247, 1.1);
     s.add(this.hemi);
     const sun = (this.sun = new THREE.DirectionalLight(0xfff1dc, 2.6));
@@ -129,7 +130,7 @@ export class StoryScene {
       const cv = document.createElement("canvas");
       cv.width = 128; cv.height = 64;
       const g2 = cv.getContext("2d");
-      g2.fillStyle = "#8EC5E6"; g2.font = "500 34px 'IBM Plex Mono', monospace"; g2.textAlign = "center"; g2.textBaseline = "middle";
+      g2.fillStyle = "#A1A1A6"; g2.font = "500 32px 'Inter Variable', system-ui, sans-serif"; g2.textAlign = "center"; g2.textBaseline = "middle";
       g2.fillText(s.no, 64, 34);
       const t = new THREE.CanvasTexture(cv);
       t.colorSpace = THREE.SRGBColorSpace;
@@ -141,7 +142,7 @@ export class StoryScene {
     const lg = new THREE.BufferGeometry();
     lg.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
     blue.add(new THREE.Mesh(lg, inkMat));
-    const grid = (this.grid = new THREE.GridHelper(1400, 140, 0x2b4d69, 0x1b3850));
+    const grid = (this.grid = new THREE.GridHelper(1400, 140, 0x3a3a3c, 0x2c2c2e));
     grid.material.transparent = true;
     grid.position.y = 0.2;
     blue.add(grid);
@@ -273,7 +274,7 @@ export class StoryScene {
     // drawing → world
     const draw = 1 - ramp(p, 0.12, 0.34);
     const world = ramp(p, 0.14, 0.34);
-    this.scene.background.copy(NAVY).lerp(SKY, ease(world));
+    this.scene.background.copy(GRAPHITE).lerp(SKY, ease(world));
     this.scene.fog.color.copy(this.scene.background);
     this.inkMat.opacity = draw;
     this.grid.material.opacity = draw * 0.9;

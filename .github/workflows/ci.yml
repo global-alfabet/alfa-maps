@@ -5,25 +5,21 @@ on:
   pull_request:
 
 jobs:
-  web:
+  check:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/web
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
-          cache-dependency-path: apps/web/package-lock.json
       - run: npm ci
-      - run: npm run lint
-      - run: npm run build
+      - run: npm run check
 
   docker:
     runs-on: ubuntu-latest
-    needs: web
+    needs: check
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -t estatemaps-web apps/web
+      - run: docker build -f apps/web/Dockerfile -t alfa-maps-web .
+      - run: docker build -f apps/app/Dockerfile -t alfa-maps-app .
