@@ -19,7 +19,7 @@ export default function App() {
       </a>
       <header className={`nav${solid ? " is-solid" : ""}`}>
         <div className="nav-in">
-          <a href="#top" aria-label="EstateMaps home">
+          <a href="#top" aria-label="Alfa Maps home">
             <Logo />
           </a>
           <nav aria-label="Main">
@@ -52,7 +52,7 @@ export default function App() {
             <a href={SITE.parent.url} target="_blank" rel="noopener noreferrer">
               {SITE.parent.name}
             </a>{" "}
-            company. © {new Date().getFullYear()}
+            product. © {new Date().getFullYear()}
           </p>
           <p className="muted">3D homes shown are concept illustrations.</p>
         </div>

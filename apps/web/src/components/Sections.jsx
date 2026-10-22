@@ -23,7 +23,7 @@ const I = {
 export function Intro() {
   return (
     <section className="intro wrap" id="why">
-      <p className="eyebrow">Why EstateMaps</p>
+      <p className="eyebrow">Why Alfa Maps</p>
       <h2>Buyers don't buy technical drawings. They buy the life they can picture.</h2>
       <div className="intro-cols">
         <p>
@@ -32,7 +32,7 @@ export function Intro() {
           site, imagine where their home will stand.
         </p>
         <p>
-          EstateMaps turns the plan you already have into a 3D estate buyers can explore on their phone. They see every
+          Alfa Maps turns the plan you already have into a 3D estate buyers can explore on their phone. They see every
           plot to scale, try a house on the one they like, and understand the price and payments before they call your
           sales team.
         </p>
@@ -145,7 +145,7 @@ export function Integrate() {
         ))}
       </div>
       <pre className="snippet" aria-label="Example button code">
-        <code>{`<a href="https://yourcompany.estatemaps.app/phase-2">Explore Phase 2 in 3D</a>`}</code>
+        <code>{`<a href="https://yourcompany.maps.globalalfabet.com/phase-2">Explore Phase 2 in 3D</a>`}</code>
       </pre>
     </section>
   );
@@ -190,7 +190,7 @@ const FAQ = [
   ["Do buyers need to install anything?", "No. It runs in the browser on phones, tablets and computers. You share a normal web link."],
   ["Are the houses real designs?", "They're concept homes to help buyers picture the finished estate. If you have your own house plans, we can add them as house types."],
   ["Can it handle townhouses and houses, not just plots?", "Yes. Plots, houses and townhouse developments are our focus. Talk to us about apartment blocks."],
-  ["Who owns the data?", "Your plans, prices and buyer information stay yours. EstateMaps provides the software and hosting as a service."],
+  ["Who owns the data?", "Your plans, prices and buyer information stay yours. Alfa Maps provides the software and hosting as a service."],
 ];
 export function Faq() {
   return (

@@ -1,4 +1,4 @@
-import { PRESETS, WALLS, ROOFS, specFromPreset } from "../data/presets.js";
+import { PRESETS, WALLS, ROOFS, specFromPreset } from "./presets.js";
 import { hashStr } from "./util.js";
 
 const MIX = [["kopje", .12], ["msasa", .24], ["jacaranda", .12], ["mukwa", .1], ["mopane", .07], ["baobab", .2], ["marula", .1], ["mahogany", .05]];

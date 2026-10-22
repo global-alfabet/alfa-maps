@@ -1,27 +1,47 @@
-# EstateMaps local stack.
-#   docker compose up -d --build            → website (production build) on http://localhost:8081
+# Alfa Maps local stack. Run from the repo root.
+#   docker compose up -d --build            → website on http://localhost:8081 and the 3D estate app on http://localhost:8080
 #   docker compose --profile dev up         → website with live reload on http://localhost:5173
-# The platform (API + admin + 3D viewer) will be added here as more services. See docs/ROADMAP.md.
+# The app starts from the fictional demo estate in apps/app/seed. To run a client's estate, put their
+# estate.json + settings.json in estates/<client>/ (git-ignored) and set ESTATE_DIR=./estates/<client> in .env.
 services:
   web:
-    build: ./apps/web
-    image: estatemaps-web:latest
-    container_name: estatemaps-web
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    image: alfa-maps-web:latest
+    container_name: alfa-maps-web
     ports:
       - "${WEB_PORT:-8081}:80"
     restart: unless-stopped
 
+  app:
+    build:
+      context: .
+      dockerfile: apps/app/Dockerfile
+    image: alfa-maps-app:latest
+    container_name: alfa-maps-app
+    ports:
+      - "${APP_PORT:-8080}:8080"
+    environment:
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      SEED_DIR: /seed
+    volumes:
+      - estate-data:/data
+      - ${ESTATE_DIR:-./apps/app/seed}:/seed:ro
+    restart: unless-stopped
+
   web-dev:
     profiles: ["dev"]
-    image: node:20-slim
-    container_name: estatemaps-web-dev
-    working_dir: /app
-    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    image: node:22-slim
+    container_name: alfa-maps-web-dev
+    working_dir: /repo
+    command: sh -c "npm ci && npm run dev -w @alfa-maps/web -- --host 0.0.0.0"
     ports:
       - "5173:5173"
     volumes:
-      - ./apps/web:/app
-      - web-node-modules:/app/node_modules
+      - .:/repo
+      - repo-node-modules:/repo/node_modules
 
 volumes:
-  web-node-modules:
+  estate-data:
+  repo-node-modules:

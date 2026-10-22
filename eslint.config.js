@@ -1,3 +1,4 @@
+// One ESLint config for the whole repo: website, app (client + server) and the shared 3D engine.
 import js from "@eslint/js";
 import globals from "globals";
 import react from "eslint-plugin-react";
@@ -5,13 +6,13 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
 export default [
-  { ignores: ["dist", "node_modules"] },
+  { ignores: ["**/dist", "**/node_modules", "apps/app/data", "estates", "tools", "**/*.min.js"] },
   {
     files: ["**/*.{js,jsx}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
-      globals: { ...globals.browser, ...globals.node },
+      globals: { ...globals.browser },
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
     settings: { react: { version: "18.3" } },
@@ -28,8 +29,13 @@ export default [
     },
   },
   {
-    // 3D engine code is dense geometry maths ported from the prototype
-    files: ["src/engine/**/*.js"],
+    // Node code: the app server and config files
+    files: ["apps/app/server/**/*.js", "**/vite.config.js", "eslint.config.js"],
+    languageOptions: { globals: { ...globals.node } },
+  },
+  {
+    // 3D engine and scene code is dense geometry maths ported from the prototype
+    files: ["packages/engine/src/**/*.js", "apps/web/src/engine/**/*.js", "apps/app/client/src/components/Viewer.jsx"],
     rules: { "no-unused-vars": "off", "no-sequences": "off" },
   },
 ];

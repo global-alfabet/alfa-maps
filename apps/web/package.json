@@ -1,34 +1,23 @@
 {
-  "name": "@estatemaps/web",
+  "name": "@alfa-maps/web",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
-  "description": "EstateMaps marketing website (estatemaps.app)",
+  "description": "Alfa Maps marketing website (maps.globalalfabet.com)",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write \"src/**/*.{js,jsx,css}\""
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource-variable/bricolage-grotesque": "^5.1.0",
-    "@fontsource/ibm-plex-mono": "^5.1.0",
-    "@fontsource/ibm-plex-sans": "^5.1.0",
+    "@alfa-maps/engine": "*",
+    "@fontsource-variable/inter": "^5.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "three": "^0.169.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.13.0",
     "@vitejs/plugin-react": "^4.3.3",
-    "eslint": "^9.13.0",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.14",
-    "globals": "^15.11.0",
-    "prettier": "^3.3.3",
     "vite": "^5.4.10"
   }
 }
