@@ -3,7 +3,7 @@ import { PRESETS } from "@alfa-maps/engine/presets";
 import { payments, money } from "../lib/pricing.js";
 import { words } from "../lib/words.js";
 
-export default function AdminPanel({ data, setSettings, setStand, setHouseType, bulk, selected, onSelect, onReset, onExport, onImport }) {
+export default function AdminPanel({ demo, data, setSettings, setStand, setHouseType, bulk, selected, onSelect, onReset, onExport, onImport }) {
   const [tab, setTab] = useState("stands");
   const s = data.settings;
   const w = words(s);
@@ -13,6 +13,7 @@ export default function AdminPanel({ data, setSettings, setStand, setHouseType, 
         {[["stands", w.Many], ["estate", "Estate"], ["pricing", "Pricing"], ["houses", "Houses"], ["data", "Data"]].map(([k, l]) => <button key={k} role="tab" aria-selected={tab === k} className={tab === k ? "on" : ""} onClick={() => setTab(k)}>{l}</button>)}
       </div>
       <div className="admin-body">
+        {demo && <p className="demo-note">This is a demo. Try anything: changes stay in this browser and nobody else sees them.</p>}
         {tab === "stands" && <StandsTab w={w} data={data} setStand={setStand} setHouseType={setHouseType} selected={selected} onSelect={onSelect} />}
         {tab === "estate" && <EstateTab s={s} set={setSettings} />}
         {tab === "pricing" && <PricingTab w={w} s={s} set={setSettings} stands={data.stands} />}

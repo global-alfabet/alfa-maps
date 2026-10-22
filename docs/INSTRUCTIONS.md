@@ -21,6 +21,7 @@ powershell -ExecutionPolicy Bypass -File scripts\setup.ps1   # Windows
 ```bash
 npm run dev                        # website with live reload: http://localhost:5173
 npm run dev:app                    # 3D estate app: http://localhost:5174 (its API runs on 8080)
+npm run dev:demo                   # the app as the website's browser-only demo (no server)
 docker compose up -d --build       # production builds: website http://localhost:8081, app http://localhost:8080
 ```
 In the app, **Admin** (top right) lets you change plot status, prices, payment plans and the house on each plot.
@@ -48,7 +49,8 @@ Example requests:
 
 ## 5. Put the website online (Netlify)
 1. In Netlify: **Add new site → Import from Git →** choose `global-alfabet/alfa-maps`. Netlify reads `netlify.toml`
-   (it builds from the repo root and publishes `apps/web/dist`), so leave the build settings empty.
+   (it builds the website and the app demo from the repo root and publishes `apps/web/dist`), so leave the build
+   settings empty. The demo is at `/demo/`.
 2. **Domain settings → Add domain →** `maps.globalalfabet.com`, then add the DNS record Netlify shows you.
 3. Contact form submissions appear in Netlify under **Forms** (turn on email notifications there).
 Every merge to `main` redeploys the site.

@@ -15,6 +15,7 @@ apps/web/          Marketing website (maps.globalalfabet.com). React 18 + Vite, 
   src/styles/site.css  All styles and brand tokens
 apps/app/          The 3D estate app. React + Vite client (client/), Express server (server/index.js) with a JSON
                    data file. One estate per running app. Starts from seed/ (the fictional demo estate).
+                   `--mode demo` builds it with no server for the website's /demo/ (lib/api.js: isDemo).
   client/src/components/  Viewer, StandList, StandPanel, Designer, AdminPanel, HouseTray, EstateIntro, LoginModal
   client/src/lib/         api.js, pricing.js, pdf.js (plot packs), facts.js, words.js (the estate's word for a plot)
 packages/engine/   Shared three.js engine: util, materials, builder, house, presets, defaults, estate (EstateScene).
@@ -29,6 +30,7 @@ docs/              INSTRUCTIONS.md (setup), ROADMAP.md (platform plan), BRAND.md
 - `npm ci`: install everything
 - `npm run dev`: website with live reload at http://localhost:5173
 - `npm run dev:app`: app at http://localhost:5174, API at http://localhost:8080 (admin is open when no password is set)
+- `npm run dev:demo`: the app as a browser-only demo (no server; what the website serves at /demo/)
 - `npm run lint` / `npm run build` / `npm run check` (both, for every workspace)
 - `docker compose up -d --build`: website on http://localhost:8081, app on http://localhost:8080
 - `docker compose --profile dev up`: website dev server inside Docker
@@ -55,7 +57,7 @@ docs/              INSTRUCTIONS.md (setup), ROADMAP.md (platform plan), BRAND.md
 - Check layout at 1440×900 and 390×844. No horizontal scrolling on phones.
 
 ## Deployment
-- Website: Netlify builds from the repo root on every push to `main` (see netlify.toml) and publishes `apps/web/dist`.
-  Domain: maps.globalalfabet.com.
+- Website: Netlify builds from the repo root on every push to `main` (`npm run build:site`, see netlify.toml) and
+  publishes `apps/web/dist`, which includes the app demo at `/demo/` (`vite build --mode demo`). Domain: maps.globalalfabet.com.
 - App: Docker image (`apps/app/Dockerfile`, built from the repo root) on Render/Railway or a VPS, with a volume at
   `/data` and `ADMIN_PASSWORD` set. Later: app.maps.globalalfabet.com and <company>.maps.globalalfabet.com.

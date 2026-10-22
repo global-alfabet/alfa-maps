@@ -109,6 +109,9 @@ section:not(.story) { scroll-margin-top: 64px; }
 .intro { padding-block: clamp(90px, 12vw, 160px) clamp(70px, 9vw, 110px); }
 .intro h2 { max-width: 22ch; }
 .intro-cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 64px); margin-top: 40px; color: var(--ink-2); font-size: 19px; line-height: 1.55; max-width: 1040px; }
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; margin-top: 40px; }
+.cta-row .muted { font-size: 15px; }
+.direct a { color: var(--accent-strong); font-weight: 500; }
 
 .how { background: var(--soft); padding-block: clamp(80px, 10vw, 130px); }
 .how-steps { list-style: none; padding: 0; margin: 48px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }

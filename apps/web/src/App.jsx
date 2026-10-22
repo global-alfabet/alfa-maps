@@ -27,6 +27,7 @@ export default function App() {
             <a href="#features">Features</a>
             <a href="#packages">Packages</a>
             <a href="#faq">FAQ</a>
+            {SITE.demoUrl && <a href={SITE.demoUrl}>Demo</a>}
           </nav>
           <a className="btn primary sm" href="#contact">
             Book a demo
