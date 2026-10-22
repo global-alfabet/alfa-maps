@@ -1,7 +1,8 @@
-# Netlify builds only the website (apps/web). Connect the GitHub repo in Netlify and it deploys on every push to main.
-# The build runs from the repo root because the website uses the shared 3D engine in packages/engine.
+# Netlify builds the website (apps/web) and the browser-only demo of the app (apps/app, served at /demo/).
+# Connect the GitHub repo in Netlify and it deploys on every push to main.
+# The build runs from the repo root because both use the shared 3D engine in packages/engine.
 [build]
-  command = "npm ci && npm run lint && npm run build -w @alfa-maps/web"
+  command = "npm ci && npm run lint && npm run build:site"
   publish = "apps/web/dist"
 
 [build.environment]
@@ -9,6 +10,11 @@
 
 [[headers]]
   for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/demo/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 

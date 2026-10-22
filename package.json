@@ -13,14 +13,16 @@
     "setup": "npm ci",
     "dev": "npm run dev -w @alfa-maps/web",
     "dev:app": "npm run dev -w @alfa-maps/app",
+    "dev:demo": "npm run dev:demo -w @alfa-maps/app",
     "start:app": "npm start -w @alfa-maps/app",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present && npm run build:demo -w @alfa-maps/app",
     "check": "npm run lint && npm run build",
     "format": "prettier --write \"apps/*/src/**/*.{js,jsx,css}\" \"apps/app/client/src/**/*.{js,jsx,css}\"",
     "up": "docker compose up -d --build",
-    "down": "docker compose down"
+    "down": "docker compose down",
+    "build:site": "npm run build -w @alfa-maps/web && npm run build:demo -w @alfa-maps/app"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

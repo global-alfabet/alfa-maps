@@ -7,7 +7,7 @@ import AdminPanel from "./components/AdminPanel.jsx";
 import HouseTray from "./components/HouseTray.jsx";
 import EstateIntro from "./components/EstateIntro.jsx";
 import LoginModal from "./components/LoginModal.jsx";
-import { api, adminToken, myDesigns } from "./lib/api.js";
+import { api, adminToken, myDesigns, isDemo } from "./lib/api.js";
 import { defaultHouse, fillHouses } from "@alfa-maps/engine/defaults";
 import { specFromPreset } from "@alfa-maps/engine/presets";
 import { payments } from "./lib/pricing.js";
@@ -73,7 +73,7 @@ export default function App() {
   };
   const save = async () => {
     setSaving(true);
-    try { await api.save({ settings: data.settings, stands: data.stands, open: data.open, houses: data.houses }); setDirty(false); say("Saved. Visitors now see these changes."); }
+    try { await api.save({ settings: data.settings, stands: data.stands, open: data.open, houses: data.houses }); setDirty(false); say(isDemo ? "Saved in this browser only. This is a demo." : "Saved. Visitors now see these changes."); }
     catch (e) { if (e.status === 401) { adminToken.set(""); setLogin(true); } say(e.message); }
     setSaving(false);
   };
@@ -101,7 +101,7 @@ export default function App() {
         <div className="brand"><span className="mark" aria-hidden="true" /><div><div className="eyebrow">{s.developer || ""}</div><h1>{s.estateName}</h1></div></div>
         <div className="top-stats"><span><b>{forSale}</b> {w.many} for sale</span><span><b>{data.stands.length}</b> {w.many} in total</span><span className="loc">{s.location}</span></div>
         <div className="top-r">
-          <a className="made" href="https://www.globalalfabet.com/products#alfa-maps" target="_blank" rel="noopener noreferrer" title="Made with Alfa Maps"><img src="/alfa-maps-icon.svg" alt="" width="18" height="18" />Alfa Maps</a>
+          <a className="made" href={isDemo ? "/" : "https://maps.globalalfabet.com"} {...(isDemo ? {} : { target: "_blank", rel: "noopener noreferrer" })} title={isDemo ? "Back to Alfa Maps" : "Made with Alfa Maps"}><img src={`${import.meta.env.BASE_URL}alfa-maps-icon.svg`} alt="" width="18" height="18" />Alfa Maps</a>
           {mode === "admin" && <button className="btn primary" disabled={!dirty || saving} onClick={save}>{saving ? "Saving…" : dirty ? "Save changes" : "All changes saved"}</button>}
           <div className="modes" role="radiogroup" aria-label="View mode">
             <button role="radio" aria-checked={mode === "buyer"} className={mode === "buyer" ? "on" : ""} onClick={() => switchMode("buyer")}>Buyer view</button>
@@ -112,7 +112,7 @@ export default function App() {
       <main className="body">
         {mode === "buyer"
           ? <StandList stands={data.stands} settings={s} selected={selected} onSelect={select} />
-          : <AdminPanel data={data} setSettings={setSettings} setStand={setStand} setHouseType={setHouseType} bulk={bulk} selected={selected} onSelect={select} onReset={onReset} onExport={onExport} onImport={onImport} />}
+          : <AdminPanel demo={isDemo} data={data} setSettings={setSettings} setStand={setStand} setHouseType={setHouseType} bulk={bulk} selected={selected} onSelect={select} onReset={onReset} onExport={onExport} onImport={onImport} />}
         <section className="stage">
           <Viewer key={sceneKey} data={data} specs={specs} look={s.look} selected={selected} onSelect={select} view={view} setView={setView} onDropHouse={onDropHouse} sceneRef={sceneRef} onReady={() => setTick((t) => t + 1)} />
           <HouseTray w={w} onPick={(type) => stand && onDropHouse(stand.no, type)} hasStand={!!stand} />

@@ -6,7 +6,9 @@
   "description": "Alfa Maps 3D estate app: buyer viewer, house designer, admin and PDF plot packs",
   "scripts": {
     "dev": "concurrently -k -n api,web \"node --watch server/index.js\" \"vite\"",
+    "dev:demo": "vite --mode demo",
     "build": "vite build",
+    "build:demo": "vite build --mode demo",
     "preview": "vite preview",
     "start": "node server/index.js"
   },

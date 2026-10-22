@@ -17,9 +17,13 @@ The multi-company platform (sign-in, company admin, many developments) grows out
 npm ci                       # once: installs everything (npm workspaces)
 npm run dev                  # website   → http://localhost:5173
 npm run dev:app              # 3D app    → http://localhost:5174 (API on 8080)
+npm run dev:demo             # the app as a browser-only demo, as served at maps.globalalfabet.com/demo/
 npm run check                # lint + build everything; must pass before a commit
 docker compose up -d --build # website → http://localhost:8081, app → http://localhost:8080
 ```
+
+The website serves a browser-only build of the app at `/demo/` (`npm run build:site`): the fictional estate with
+no server, where admin changes stay in the visitor's browser.
 
 The app starts with the fictional demo estate in `apps/app/seed`. Client plans, plot lists and estate data never go
 in git: keep them in `estates/<client>/` (ignored) and point the app at that folder with `SEED_DIR` (or `ESTATE_DIR`

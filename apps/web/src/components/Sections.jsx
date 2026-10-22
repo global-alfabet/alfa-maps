@@ -37,6 +37,14 @@ export function Intro() {
           sales team.
         </p>
       </div>
+      {SITE.demoUrl && (
+        <div className="cta-row">
+          <a className="btn primary" href={SITE.demoUrl}>
+            Try the demo estate
+          </a>
+          <span className="muted">A fictional estate with 170 plots. Works on your phone.</span>
+        </div>
+      )}
     </section>
   );
 }
@@ -235,6 +243,11 @@ export function Contact() {
             Tell us about your development and we'll show you a live demo. Send us a plan and we can show it to you as a
             3D estate.
           </p>
+          {SITE.demoUrl && (
+            <p className="direct">
+              Want a look first? <a href={SITE.demoUrl}>Try the demo estate</a>.
+            </p>
+          )}
           <p className="direct">
             Or email <span className="sel">{SITE.email}</span>
             {SITE.whatsapp && (
