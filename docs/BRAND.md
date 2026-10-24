@@ -2,7 +2,7 @@
 
 **Name:** Alfa Maps (two words, capital A and M). Domain: maps.globalalfabet.com.
 **Line:** See the estate before it's built.
-**Parent:** Alfa Maps is a Global Alfabet product, alongside Alfa Places, Alfa Shop and the Global Alfabet Account.
+**Parent:** Alfa Maps is a Global Alfabet product, alongside Alfa Finda, Alfa Shop and the Global Alfabet Account.
 
 ## Design language
 Every Global Alfabet site shares one look, based on business.apple.com: clean white and #f5f5f7 sections, Inter,
